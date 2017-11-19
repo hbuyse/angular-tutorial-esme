@@ -6,6 +6,8 @@ import { FormComponent } from './form/form.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PrivateComponent } from './private/private.component';
+import { RomanizePipe } from './romanize.pipe';
+import { AuthentificationService } from './authentification.service';
 
 @NgModule({
   declarations: [
@@ -13,12 +15,15 @@ import { PrivateComponent } from './private/private.component';
     FormComponent,
     LoginComponent,
     RegisterComponent,
-    PrivateComponent
+    PrivateComponent,
+    RomanizePipe
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    AuthentificationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
