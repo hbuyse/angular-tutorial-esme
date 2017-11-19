@@ -25,6 +25,7 @@ export class FormComponent implements OnInit {
   }
 
   public reset() {
-
+    this.password = '';
+    this.username = '';
   }
 }

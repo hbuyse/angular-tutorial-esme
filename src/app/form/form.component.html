@@ -7,7 +7,7 @@
     <br>
     <div *ngIf="isRegister">
       <input type="password" id="confirmPassword" class="form-control" [value]="confirmPassword" placeholder="Password">
-      <span ng-show="user.confirmPassword !== user.password"> Error, use the same password</span>
+      <span *ngIf="confirmPassword !== password"> Error, use the same password</span>
       <br>
     </div>
 

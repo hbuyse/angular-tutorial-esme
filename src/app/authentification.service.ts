@@ -2,14 +2,11 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthentificationService {
-
-  public _http: any;
   private userList: any[];
   private isAuth: boolean;
   public currentUser: object;
 
-  constructor($http) {
-    this._http = $http;
+  constructor() {
     this.userList = [];
     this.isAuth = false;
     this.currentUser = {};
