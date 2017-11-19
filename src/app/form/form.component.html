@@ -1,0 +1,8 @@
+<input type="text" [value]="username" (input)="username = $event.target.value" placeholder="Put your name here">
+<button (click)="show=true">Show username</button>
+
+<pre *ngIf="show">{{username}}</pre>
+
+<ul *ngFor="let el of myList">
+  <li>{{el.name}}</li>
+</ul>
