@@ -8,14 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class FormComponent implements OnInit {
 
   public username = '';
-  public show = false;
-  public myList: any[];
+  public password = '';
+  public confirmPassword = '';
+  public submitTitle = 'Form';
+  public isRegister = false;
 
   constructor() {
-    this.myList = [{name: 'Saab'}, {name: 'Volvo'}, {name: 'BMW'}];
   }
 
   ngOnInit() {
   }
 
+  public submit() {
+
+  }
+
+  public reset() {
+
+  }
 }
