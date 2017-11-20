@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   templateUrl: './form.component.html',
@@ -8,24 +8,38 @@ import { Component, OnInit, Input } from '@angular/core';
 export class FormComponent implements OnInit {
 
   @Input('title') submitTitle;
+  @Output() onSubmit = new EventEmitter<object>();
 
-  public username = '';
-  public password = '';
-  public confirmPassword = '';
+  @ViewChild('username') username: ElementRef;
+  @ViewChild('password') password: ElementRef;
+  @ViewChild('confirm') confirm: ElementRef;
+
   public isRegister = false;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {
+    if (this.submitTitle === 'Register') {
+      this.isRegister = true;
+    }
   }
 
   public submit() {
-
+    const payload = {};
+    payload['username'] = this.username.nativeElement.value;
+    payload['password'] = this.password.nativeElement.value;
+    if (this.isRegister) {
+      payload['confirmPassword'] = this.confirm.nativeElement.value;
+    }
+    console.log(payload);
+    this.onSubmit.emit(payload);
   }
 
   public reset() {
-    this.password = '';
-    this.username = '';
+    this.password.nativeElement.value = '';
+    this.username.nativeElement.value = '';
+    if (this.isRegister) {
+      this.confirm.nativeElement.value = '';
+    }
   }
 }

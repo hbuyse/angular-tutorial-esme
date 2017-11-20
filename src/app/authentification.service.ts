@@ -16,6 +16,10 @@ export class AuthentificationService {
     return this.isAuth;
   }
 
+  getCurrentUser() {
+    return this.currentUser;
+  }
+
   login(username, password, callback) {
     let found = true;
     for (const user in this.userList) {
@@ -24,6 +28,7 @@ export class AuthentificationService {
           this.isAuth = true;
           this.currentUser = this.userList[user];
           callback(true);
+          console.log(this.currentUser);
           found = false;
         }
       }
@@ -36,6 +41,7 @@ export class AuthentificationService {
   register(username, password, confirmPassword) {
     if (password === confirmPassword) {
       this.userList.push({username, password});
+      console.log('Register !');
     }
   }
 
