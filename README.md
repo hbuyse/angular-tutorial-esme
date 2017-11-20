@@ -42,9 +42,9 @@ git diff step-?..step-?
 ### step-0_X _Back To Basics_
 ### step-1_X _Components_
 ### step-2_X _Services_
-### step-2_X _Pipes_
-### step-3_X _Router_
-### step-4_X _Login example_
+### step-3_X _Pipes_
+### step-4_X _Router_
+### step-5_X _Login example_
 
 ### Installing Dependencies
 
