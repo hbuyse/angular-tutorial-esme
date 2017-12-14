@@ -11,8 +11,9 @@ Each tagged commit is a separate lesson teaching a single aspect of the framewor
 
 ### Git
 
-- A good place to learn about setting up git is [here][git-setup].
-- You can find documentation and download git [here][git-home].
+- You can download git [here](https://git-scm.com/downloads).
+- You can find documentation [here](https://git-scm.com/doc) and the official Git book in French [there](https://git-scm.com/book/fr/v2).
+- A good place to learn about setting up git is [here](https://git-scm.com/docs/gittutorial).
 
 ### Node.js and Tools
 
@@ -35,8 +36,8 @@ git checkout step-?
 
 To see the changes made between any two lessons use the `git diff` command:
 
-```
-git diff step-?..step-?
+```shell
+git diff <commit_sha1>..<commit_sha1>
 ```
 
 ### step-0_X _Back To Basics_
